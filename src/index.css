@@ -6,7 +6,7 @@ body {
 
 .app {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
 }
 
@@ -23,17 +23,26 @@ body {
   padding-right: 2em;
   background-color: pink;
 }
-
+*/
 #map {
   height: 100%;
-} */
+} 
+
+.buttonContainer {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
 .mapContainer {
-  height: 45%;
+  height: 45vh;
   background-color: lightblue;
+  margin-bottom: 10px;
 }
 .quakeContainer {
+  padding: 10px;
   height: 40%;
   background-color: lavender;
-  margin-top: 50%;
 }
