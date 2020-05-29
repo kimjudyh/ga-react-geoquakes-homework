@@ -2,25 +2,25 @@ import React, {Component} from 'react'
 import Title from './Title'
 
 class QuakeContainer extends Component {
-  state = {
-    quakeData: []
-  }
+  // state = {
+  //   quakeData: []
+  // }
 
-  componentDidMount() {
-    fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson')
-      .then(response => response.json())
-      .then(quakeData => {
-        this.setState({
-          quakeData: quakeData.features
-        })
-        console.log(this.state.quakeData)
-      })
-      .catch(err => console.log(err))
-  }
+  // componentDidMount() {
+  //   fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson')
+  //     .then(response => response.json())
+  //     .then(quakeData => {
+  //       this.setState({
+  //         quakeData: quakeData.features
+  //       })
+  //       console.log(this.state.quakeData)
+  //     })
+  //     .catch(err => console.log(err))
+  // }
 
   render() {
     // map earthquake array info to the Title component
-    const quakeList = this.state.quakeData.map((quake, index) => (
+    const quakeList = this.props.quakeData.map((quake, index) => (
       <Title singleQuakeData={quake} key={index} />
     ))
 
