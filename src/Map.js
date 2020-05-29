@@ -15,11 +15,9 @@ export class MapContainer extends Component {
     const markerList = this.props.quakeData.map((quake, index) => {
       let lat = quake.geometry.coordinates[1];
       let long = quake.geometry.coordinates[0];
-      let title = quake.properties.place;
       return (
         <Marker 
           position={{lat: lat, lng: long}} 
-          title={{title}} 
           icon={{url: "images/epicenter.png", scaledSize: new this.props.google.maps.Size(30,30)}}
         />
       )
@@ -27,9 +25,9 @@ export class MapContainer extends Component {
 
     return (
       <Map google={this.props.google}
-        zoom={1}
+        zoom={1.1}
         style={mapStyles}
-        containerStyle={{ height: '55%' }}
+        containerStyle={{ height: '45vh' }}
         initialCenter={coords}>
 
         {markerList}

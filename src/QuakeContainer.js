@@ -11,7 +11,7 @@ class QuakeContainer extends Component {
 
     return (
       <div>
-        <h3>Earthquakes from the Past Month</h3>
+        <h3>{this.props.dataSetTitle} ({this.props.quakeData.length})</h3>
         <div id="info">
           {quakeList}
         </div>
