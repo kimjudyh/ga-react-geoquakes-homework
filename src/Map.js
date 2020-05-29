@@ -16,7 +16,13 @@ export class MapContainer extends Component {
       let lat = quake.geometry.coordinates[1];
       let long = quake.geometry.coordinates[0];
       let title = quake.properties.place;
-      return (<Marker position={{lat: lat, lng: long}} title={{title}} />)
+      return (
+        <Marker 
+          position={{lat: lat, lng: long}} 
+          title={{title}} 
+          icon={{url: "images/epicenter.png", scaledSize: new this.props.google.maps.Size(30,30)}}
+        />
+      )
     })
 
     return (
@@ -32,14 +38,6 @@ export class MapContainer extends Component {
     )
   }
 }
-
-// class Map extends Component {
-//   render() {
-//     return (
-//       <div>map</div>
-//     )
-//   }
-// }
 
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg'
