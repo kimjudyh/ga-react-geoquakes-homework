@@ -10,7 +10,7 @@ body {
   justify-content: space-around;
 }
 
-.mapContainer {
+/* .mapContainer {
   width: 40%;
   padding-top: 2em; 
   padding-left: 2em;
@@ -26,4 +26,14 @@ body {
 
 #map {
   height: 100%;
+} */
+
+.mapContainer {
+  height: 45%;
+  background-color: lightblue;
+}
+.quakeContainer {
+  height: 40%;
+  background-color: lavender;
+  margin-top: 50%;
 }
