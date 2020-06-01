@@ -39,12 +39,15 @@ export class MapContainer extends Component {
     const markerList = this.props.quakeData.map((quake, index) => {
       let lat = quake.geometry.coordinates[1];
       let long = quake.geometry.coordinates[0];
+      let date = new Date(quake.properties.time);
       return (
         <Marker
           position={{lat: lat, lng: long}} 
           icon={{url: "images/epicenter.png", scaledSize: new this.props.google.maps.Size(30,30)}}
           onClick={this.onMarkerClick}
-          name={quake.properties.title}
+          title={quake.properties.title}
+          name={date.toUTCString()}
+          // name={`${quake.properties.title} - ${date.toUTCString()}`}
           >
         </Marker> 
       )
@@ -65,7 +68,8 @@ export class MapContainer extends Component {
           onClose={this.onClose}
         >
           <div>
-            {this.state.activeMarker.name}
+            <h3>{this.state.activeMarker.title}</h3>
+            <h4>{this.state.activeMarker.name}</h4>
           </div>
         </InfoWindow>
 
