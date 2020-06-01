@@ -37,12 +37,13 @@ body {
 }
 
 .mapContainer {
-  height: 45vh;
+  height: 55vh;
   background-color: lightblue;
   margin-bottom: 10px;
 }
 .quakeContainer {
-  padding: 10px;
-  height: 40%;
+  padding: 10px 20px;
+  height: 40vh;
   background-color: lavender;
+  overflow-y: scroll;
 }
