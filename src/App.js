@@ -30,8 +30,8 @@ class App extends Component {
       })
       .catch(err => console.log('30', err))    
 
-    // magnitude 2.5+ earthquakes in the last 30 days
-    fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson')
+    // magnitude 4.5+ earthquakes in the last 30 days
+    fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson')
       .then(response => response.json())
       .then(quakeData => {
         this.setState({
@@ -114,7 +114,7 @@ class App extends Component {
     }
     else if (buttonValue === 'm4.5_30') {
       this.setState({
-        quakeData: this.state.mag4_5_7DaysData,
+        quakeData: this.state.mag4_5_30DaysData,
         dataSetTitle: "Magnitude 4.5+ Earthquakes in the Last 30 Days"
       })
     }
